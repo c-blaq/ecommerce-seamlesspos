@@ -4,7 +4,7 @@ import Image from "next/image";
 const AboutUS = () => {
   return (
     <div className="py-10 md:py-20">
-      <div className="flex gap-5 items-center flex-col-reverse sm:flex-row">
+      <div className="flex gap-5 items-center flex-col-reverse sm:flex-row max-w-screen-2xl mx-auto">
         <div className="flex-1 text-textBlack">
           <h2 className="text-xl font-semibold mb-3 sm:mb-5">About Us</h2>
           <p className="text-sm md:text-base">
