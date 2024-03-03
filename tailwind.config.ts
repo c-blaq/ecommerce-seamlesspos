@@ -11,6 +11,7 @@ const config: Config = {
       colors: {
         primary: {
           DEFAULT: "#1B42E4",
+          dark: "#00008B",
         },
         secondary: {
           DEFAULT: "blue",
@@ -18,6 +19,7 @@ const config: Config = {
         textGray: {
           100: "#E5E7EB",
         },
+        textBlack: "#1F2937",
       },
     },
   },
