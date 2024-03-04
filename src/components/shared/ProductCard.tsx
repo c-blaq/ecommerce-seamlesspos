@@ -1,15 +1,18 @@
-// "use client";
-
+import { Product } from "@/types/product";
 import React from "react";
 
-const ProductCard = () => {
+interface IProduct {
+  product: Product;
+}
+
+const ProductCard = ({ product }: IProduct) => {
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg">
+    <div className="max-w-sm min-w-[200px] rounded overflow-hidden shadow-lg flex-1 shrink-0">
       <div className="bg-gray-400 h-72"></div>
 
       <div className="px-6 py-4">
         <div>
-          <h3 className="font-bold  mb-2">Product Name</h3>
+          <h3 className="font-bold  mb-2">{product.name}</h3>
           <p className="text-gray-700 text-base mt-2">Price: $99.99</p>
         </div>
 

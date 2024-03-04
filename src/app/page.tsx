@@ -3,6 +3,8 @@ import Hero from "@/components/home/Hero";
 import ProductCard from "@/components/shared/ProductCard";
 import { FaRegFaceSmileWink, FaTruckFast } from "react-icons/fa6";
 import { RiSecurePaymentFill } from "react-icons/ri";
+import Products from "@/data/mock.json";
+import { Product } from "@/types/product";
 
 export default function Home() {
   return (
@@ -11,7 +13,7 @@ export default function Home() {
 
       <section className="bg-primary/[0.06] py-10 md:py-20">
         <div className="max-w-screen-2xl mx-auto">
-          <h2 className="text-3xl font-semibold text-center mb-8">
+          <h2 className="text-2xl font-semibold text-center mb-8">
             Why Choose Us?
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-5">
@@ -50,10 +52,14 @@ export default function Home() {
         </div>
       </section>
 
-      <div>
-        <h2>Featured</h2>
-        <div>
-          <ProductCard />
+      <div className="max-w-screen-2xl mx-auto py-10 md:py-20 px-5">
+        <h2 className="text-2xl font-semibold text-center mb-8">
+          Featured Products
+        </h2>
+        <div className="flex gap-5 overflow-x-scroll no-scrollbar">
+          {Products.map((product: Product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
         </div>
       </div>
       {/* <AboutUS /> */}
