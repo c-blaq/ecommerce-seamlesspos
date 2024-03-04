@@ -50,7 +50,7 @@ const Product = ({ params }: { params: { slug: string } }) => {
     <div className="py-24 px-5 lg:h-screen  max-w-screen-2xl  mx-auto">
       <Link
         href="/"
-        className="flex items-center gap-1 mb-5 hover:underline hover:text-inherit"
+        className="flex items-center gap-1 text-sm mb-5 hover:underline hover:text-inherit"
       >
         <FaChevronLeft />
         continue shopping
@@ -60,11 +60,11 @@ const Product = ({ params }: { params: { slug: string } }) => {
         <div className="flex -mx-5 lg:mx-0 h-full flex-col lg:flex-row justify-between gap-5 items-center">
           <div className="min-h-full w-full bg-textGray-100 flex-1 ">
             <Image
-              src={""}
-              alt="Jacket"
-              width={1400}
-              height={800}
-              className="h-full w-full object-cover object-top"
+              src={product.image[0]}
+              alt={product.name}
+              width={500}
+              height={500}
+              className="w-full h-full object-cover object-center"
             />
           </div>
 
