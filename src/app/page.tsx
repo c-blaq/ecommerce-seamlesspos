@@ -1,12 +1,34 @@
+"use client";
+
 import AboutUS from "@/components/home/About";
 import Hero from "@/components/home/Hero";
 import ProductCard from "@/components/shared/ProductCard";
 import { FaRegFaceSmileWink, FaTruckFast } from "react-icons/fa6";
 import { RiSecurePaymentFill } from "react-icons/ri";
-import Products from "@/data/mock.json";
 import { Product } from "@/types/product";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [products, setProducts] = useState<Product[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/data/mock.json");
+        if (!response.ok) {
+          throw new Error("Failed to fetch mock data");
+        }
+        const data = await response.json();
+        setProducts(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <>
       <Hero />
@@ -57,7 +79,7 @@ export default function Home() {
           Featured Products
         </h2>
         <div className="flex gap-5 overflow-x-scroll no-scrollbar">
-          {Products.map((product: Product) => (
+          {products.map((product: Product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>

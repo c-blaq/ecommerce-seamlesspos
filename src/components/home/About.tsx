@@ -16,7 +16,7 @@ const AboutUS = () => {
 
         <div className="h-full max-h-[400px] bg-gray-200 overflow-clip flex-1 -mx-5 sm:mx-0">
           <Image
-            src="/gadgets.png"
+            src="/images/gadgets.png"
             alt="About banner"
             width={500}
             height={500}

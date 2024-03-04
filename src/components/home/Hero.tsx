@@ -22,19 +22,19 @@ const Hero = () => {
       title: "Experience Seamless Shopping with SeamlessPOS",
       description:
         "Discover a world of electronic wonders with SeamlessPOS. From smartphones to laptops, wireless earbuds to smartwatches, find the perfect tech companion to elevate your lifestyle. ",
-      imageSrc: "/ecommerce.webp",
+      imageSrc: "/images/ecommerce.webp",
     },
     {
       title: "Enjoy True Wireless Freedom with Wireless Headphones",
       description:
         "Immerse yourself in your favorite music with wireless headphones, offering superior sound quality, comfort, and convenience.",
-      imageSrc: "/headphone.avif",
+      imageSrc: "/images/headphone.avif",
     },
     {
       title: "Discover the Latest Smartwatches",
       description:
         "Explore a wide range of Smartwatches from top brands, featuring stunning displays,and innovative features.",
-      imageSrc: "/smartwatch.avif",
+      imageSrc: "/images/smartwatch.avif",
     },
   ];
   return (

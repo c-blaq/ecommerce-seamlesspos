@@ -10,7 +10,7 @@ const Header: React.FC = () => {
         <h1 className="text-lg sm:text-xl font-semibold transition duration-300">
           <Link href="/">
             <Image
-              src="/logo.png"
+              src="/images/logo.png"
               alt="SeamlessPOS"
               width={150}
               height={387}
