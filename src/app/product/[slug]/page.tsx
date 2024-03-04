@@ -1,11 +1,12 @@
 "use client";
 
-import Loader from "@/components/shared/Loader";
-import { Product } from "@/types/product";
-import Image from "next/image";
-import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
 import { FaChevronLeft } from "react-icons/fa6";
+import { Product } from "@/types/product";
+import { formatCurrency } from "@/utils/formatCurrency";
+import Loader from "@/components/shared/Loader";
 
 const Product = ({ params }: { params: { slug: string } }) => {
   const [product, setProduct] = useState<Product | undefined>(undefined);
@@ -70,7 +71,9 @@ const Product = ({ params }: { params: { slug: string } }) => {
           <div className="flex-1 mt-5 lg:mt-0 px-5 lg:px-0">
             <div className="flex justify-between items-center">
               <h2 className="text-xl font-semibold">{product?.name}</h2>
-              <span className="text-textBlack text-lg">{product?.price}</span>
+              <span className="text-textBlack text-lg">
+                {formatCurrency(product?.price)}
+              </span>
             </div>
             <div className="py-5 text-sm lg:text-base leading-loose">
               {product?.description}
