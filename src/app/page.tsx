@@ -1,5 +1,6 @@
 import AboutUS from "@/components/home/About";
 import Hero from "@/components/home/Hero";
+import ProductCard from "@/components/shared/ProductCard";
 import { FaRegFaceSmileWink, FaTruckFast } from "react-icons/fa6";
 import { RiSecurePaymentFill } from "react-icons/ri";
 
@@ -49,6 +50,12 @@ export default function Home() {
         </div>
       </section>
 
+      <div>
+        <h2>Featured</h2>
+        <div>
+          <ProductCard />
+        </div>
+      </div>
       {/* <AboutUS /> */}
     </>
   );
