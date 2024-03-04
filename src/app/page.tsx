@@ -8,6 +8,7 @@ import { RiSecurePaymentFill } from "react-icons/ri";
 import { Product } from "@/types/product";
 import { useEffect, useState } from "react";
 import Loader from "@/components/shared/Loader";
+import Link from "next/link";
 
 export default function Home() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -16,6 +17,7 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        setIsLoading(true);
         const response = await fetch("/data/mock.json");
 
         if (!response.ok) {
@@ -87,7 +89,13 @@ export default function Home() {
             </h2>
             <div className="flex gap-5 overflow-x-scroll no-scrollbar">
               {products.map((product: Product) => (
-                <ProductCard key={product.id} product={product} />
+                <Link
+                  href={`/product/${product.id.toString()}`}
+                  key={product.id}
+                  className="flex-1"
+                >
+                  <ProductCard product={product} />
+                </Link>
               ))}
             </div>
           </>
