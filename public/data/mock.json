@@ -4,7 +4,11 @@
     "name": "Iphone 12",
     "description": "The latest flagship smartphone from Apple. Experience blazing fast performance, stunning photography, and all-day battery life with this sleek and powerful device.",
     "price": 359999.99,
-    "image": ["/images/iphone12Front.webp"],
+    "image": [
+      "/images/iphone12Front.webp",
+      "/images/iphone12Back.jpeg",
+      "/images/iphone12Top.jpg"
+    ],
     "additionalDetails": {
       "brand": "Apple",
       "color": "Black",
@@ -21,7 +25,11 @@
     "name": "HP Omen",
     "description": "Power through your workday with the ultra-portable and high-performance laptop from HP. Featuring a stunning display, lightning-fast SSD storage, and all-day battery life, this laptop is perfect for professionals on the go.",
     "price": 499999.99,
-    "image": ["/images/hpOmenFront.jpg"],
+    "image": [
+      "/images/hpOmenFront.jpg",
+      "/images/hpOmenBack.jpg",
+      "/images/hpOmenMultiple.jpg"
+    ],
     "additionalDetails": {
       "brand": "HP",
       "processor": "Intel Core i7-1165G7",
@@ -36,7 +44,11 @@
     "name": "Wireless Headphone",
     "description": "Immerse yourself in your favorite music with these premium wireless earbuds from Oraimo. With active noise cancellation, sweat and water resistance, and a comfortable ergonomic design, these earbuds are perfect for workouts, commutes, and everyday use.",
     "price": 19999.99,
-    "image": ["/images/oHeadphoneFront.webp"],
+    "image": [
+      "/images/oHeadphoneFront.webp",
+      "/images/oHeadphoneLeft.webp",
+      "/images/oHeadphoneMultiple.jpg"
+    ],
     "additionalDetails": {
       "brand": "Oraimo",
       "type": "Headset",
@@ -53,7 +65,7 @@
     "name": "IWatch 3",
     "description": "Stay connected and track your fitness goals with the latest smartwatch from Apple. With advanced health monitoring features, built-in GPS, and a sleek design, this smartwatch is your perfect companion for an active lifestyle.",
     "price": 299999.99,
-    "image": ["/images/iWatchSide.jpeg"],
+    "image": ["/images/iWatchSide.jpeg", "/images/iWatchFront.jpeg"],
     "additionalDetails": {
       "brand": "Apple",
       "display": "1.4-inch AMOLED touchscreen",

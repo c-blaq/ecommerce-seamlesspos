@@ -7,6 +7,7 @@ import { FaChevronLeft } from "react-icons/fa6";
 import { Product } from "@/types/product";
 import { formatCurrency } from "@/utils/formatCurrency";
 import Loader from "@/components/shared/Loader";
+import ImageSlide from "@/components/product/ImageSlide";
 
 const Product = ({ params }: { params: { slug: string } }) => {
   const [product, setProduct] = useState<Product | undefined>(undefined);
@@ -47,10 +48,10 @@ const Product = ({ params }: { params: { slug: string } }) => {
   }
 
   return (
-    <div className="py-24 px-5 lg:h-screen  max-w-screen-2xl  mx-auto">
+    <div className="py-24 px-5 lg:min-h-screen  max-w-screen-2xl  mx-auto">
       <Link
         href="/"
-        className="flex items-center gap-1 text-sm mb-5 hover:underline hover:text-inherit"
+        className="flex items-center gap-1 w-fit text-sm mb-5 hover:underline hover:text-inherit"
       >
         <FaChevronLeft />
         continue shopping
@@ -58,14 +59,15 @@ const Product = ({ params }: { params: { slug: string } }) => {
 
       {product ? (
         <div className="flex -mx-5 lg:mx-0 h-full flex-col lg:flex-row justify-between gap-5 items-center">
-          <div className="min-h-full w-full bg-textGray-100 flex-1 ">
-            <Image
+          <div className="h-full w-full lg:w-1/2 ">
+            {/* <Image
               src={product.image[0]}
               alt={product.name}
               width={500}
               height={500}
               className="w-full h-full object-cover object-center"
-            />
+            /> */}
+            <ImageSlide images={product.image} altText={product.name} />
           </div>
 
           <div className="flex-1 mt-5 lg:mt-0 px-5 lg:px-0">
