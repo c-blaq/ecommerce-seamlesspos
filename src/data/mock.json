@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "name": "Smartphone",
+    "description": "The latest flagship smartphone from Brand X. Experience blazing fast performance, stunning photography, and all-day battery life with this sleek and powerful device.",
+    "price": 899.99,
+    "image": "https://via.placeholder.com/150",
+    "additionalDetails": {
+      "brand": "Brand X",
+      "color": "Black",
+      "screenSize": "6.7 inches",
+      "resolution": "1440 x 3200 pixels",
+      "camera": "Quad-camera setup with 108 MP main sensor",
+      "processor": "Snapdragon 888",
+      "RAM": "12 GB",
+      "storage": "256 GB"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Laptop",
+    "description": "Power through your workday with the ultra-portable and high-performance laptop from Brand Y. Featuring a stunning display, lightning-fast SSD storage, and all-day battery life, this laptop is perfect for professionals on the go.",
+    "price": 1499.99,
+    "image": "https://via.placeholder.com/150",
+    "additionalDetails": {
+      "brand": "Brand Y",
+      "processor": "Intel Core i7-1165G7",
+      "RAM": "16 GB DDR4",
+      "storage": "512 GB NVMe SSD",
+      "graphics": "NVIDIA GeForce GTX 1650",
+      "display": "15.6-inch Full HD IPS display"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Wireless Earbuds",
+    "description": "Immerse yourself in your favorite music with these premium wireless earbuds from Brand Z. With active noise cancellation, sweat and water resistance, and a comfortable ergonomic design, these earbuds are perfect for workouts, commutes, and everyday use.",
+    "price": 199.99,
+    "image": "https://via.placeholder.com/150",
+    "additionalDetails": {
+      "brand": "Brand Z",
+      "type": "In-Ear",
+      "wireless": true,
+      "color": "White",
+      "batteryLife": "Up to 8 hours on a single charge",
+      "chargingCase": "Provides an additional 24 hours of battery life",
+      "noiseCancellation": true,
+      "waterResistance": "IPX4-rated"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Smart Watch",
+    "description": "Stay connected and track your fitness goals with the latest smartwatch from Brand W. With advanced health monitoring features, built-in GPS, and a sleek design, this smartwatch is your perfect companion for an active lifestyle.",
+    "price": 299.99,
+    "image": "https://via.placeholder.com/150",
+    "additionalDetails": {
+      "brand": "Brand W",
+      "display": "1.4-inch AMOLED touchscreen",
+      "sensors": "Heart rate monitor, SpO2 sensor, Accelerometer, Gyroscope",
+      "connectivity": "Bluetooth 5.0, Wi-Fi, GPS",
+      "waterResistance": "Up to 50 meters (5 ATM)",
+      "batteryLife": "Up to 7 days on a single charge"
+    }
+  }
+]
