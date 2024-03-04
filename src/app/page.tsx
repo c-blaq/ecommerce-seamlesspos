@@ -7,20 +7,23 @@ import { FaRegFaceSmileWink, FaTruckFast } from "react-icons/fa6";
 import { RiSecurePaymentFill } from "react-icons/ri";
 import { Product } from "@/types/product";
 import { useEffect, useState } from "react";
+import Loader from "@/components/shared/Loader";
 
 export default function Home() {
   const [products, setProducts] = useState<Product[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch("/data/mock.json");
+
         if (!response.ok) {
           throw new Error("Failed to fetch mock data");
         }
         const data = await response.json();
         setProducts(data);
+        setIsLoading(false);
       } catch (error) {
         console.error(error);
       }
@@ -75,14 +78,20 @@ export default function Home() {
       </section>
 
       <div className="max-w-screen-2xl mx-auto py-10 md:py-20 px-5">
-        <h2 className="text-2xl font-semibold text-center mb-8">
-          Featured Products
-        </h2>
-        <div className="flex gap-5 overflow-x-scroll no-scrollbar">
-          {products.map((product: Product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <>
+            <h2 className="text-2xl font-semibold text-center mb-8">
+              Featured Products
+            </h2>
+            <div className="flex gap-5 overflow-x-scroll no-scrollbar">
+              {products.map((product: Product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
+          </>
+        )}
       </div>
       {/* <AboutUS /> */}
     </>
