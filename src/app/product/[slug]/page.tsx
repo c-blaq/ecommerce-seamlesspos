@@ -3,11 +3,13 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { FaChevronLeft } from "react-icons/fa6";
+import { FaChevronLeft, FaPhone } from "react-icons/fa6";
 import { Product } from "@/types/product";
 import { formatCurrency } from "@/utils/formatCurrency";
 import Loader from "@/components/shared/Loader";
 import ImageSlide from "@/components/product/ImageSlide";
+import { IoMdInformationCircle } from "react-icons/io";
+import { MdOutlineProductionQuantityLimits } from "react-icons/md";
 
 const Product = ({ params }: { params: { slug: string } }) => {
   const [product, setProduct] = useState<Product | undefined>(undefined);
@@ -58,59 +60,86 @@ const Product = ({ params }: { params: { slug: string } }) => {
       </Link>
 
       {product ? (
-        <div className="flex -mx-5 lg:mx-0 h-full flex-col lg:flex-row justify-between gap-5 items-center">
-          <div className="h-full w-full lg:w-1/2 ">
-            {/* <Image
-              src={product.image[0]}
-              alt={product.name}
-              width={500}
-              height={500}
-              className="w-full h-full object-cover object-center"
-            /> */}
-            <ImageSlide images={product.image} altText={product.name} />
-          </div>
-
-          <div className="flex-1 mt-5 lg:mt-0 px-5 lg:px-0">
-            <div className="flex justify-between items-center">
-              <h2 className="text-xl font-semibold">{product?.name}</h2>
-              <span className="text-textBlack text-lg">
-                {formatCurrency(product?.price)}
-              </span>
-            </div>
-            <div className="py-5 text-sm lg:text-base leading-loose">
-              {product?.description}
+        <>
+          <div className="flex -mx-5 lg:mx-0 h-full flex-col lg:flex-row justify-between gap-5 items-center">
+            <div className="h-full w-full lg:w-1/2 ">
+              <ImageSlide images={product.image} altText={product.name} />
             </div>
 
-            {product?.additionalDetails && (
-              <div>
-                <h3 className="lg:text-lg font-semibold mt-4">
-                  Additional Details:
-                </h3>
-                <ul className="mt-2 grid sm:grid-cols-2 gap-3">
-                  {Object.entries(product?.additionalDetails).map(
-                    ([key, value]) => (
-                      <li key={key}>
-                        <span className="font-semibold text-sm lg:text-base">
-                          {key}:
-                        </span>{" "}
-                        {value}
-                      </li>
-                    )
-                  )}
-                </ul>
+            <div className="flex-1 mt-5 lg:mt-0 px-5 lg:px-0">
+              <div className="flex justify-between items-center">
+                <h2 className="text-xl font-semibold">{product?.name}</h2>
+                <span className="text-textBlack text-lg">
+                  {formatCurrency(product?.price)}
+                </span>
               </div>
-            )}
+              <div className="py-5 text-sm lg:text-base leading-loose">
+                {product?.description}
+              </div>
 
-            <div className="flex gap-4 mt-8 md:mt-10">
-              <button className="text-sm h-10 bg-primary hover:bg-primary-dark text-white flex-1 rounded transition duration-300">
-                Buy Now
-              </button>
-              <button className=" h-10 text-sm  bg-textBlack hover:bg-textBlack/80 text-white flex-1 rounded transition duration-300">
-                Add to cart
-              </button>
+              {product?.additionalDetails && (
+                <div>
+                  <h3 className="lg:text-lg font-semibold mt-4">
+                    Additional Details:
+                  </h3>
+                  <ul className="mt-2 grid sm:grid-cols-2 gap-3">
+                    {Object.entries(product?.additionalDetails).map(
+                      ([key, value]) => (
+                        <li key={key}>
+                          <span className="font-semibold text-sm lg:text-base">
+                            {key}:
+                          </span>{" "}
+                          {value}
+                        </li>
+                      )
+                    )}
+                  </ul>
+                </div>
+              )}
+
+              <div className="flex gap-4 mt-8 md:mt-10">
+                <button className="text-sm h-10 bg-primary hover:bg-primary-dark text-white flex-1 rounded transition duration-300">
+                  Buy Now
+                </button>
+                <button className=" h-10 text-sm  bg-textBlack hover:bg-textBlack/80 text-white flex-1 rounded transition duration-300">
+                  Add to cart
+                </button>
+              </div>
             </div>
           </div>
-        </div>
+
+          <div className="mt-8">
+            <h2 className="text-lg font-semibold">Extra Informations:</h2>
+            <div className="mt-4 flex items-center gap-2">
+              <FaPhone className="text-xl" />
+              <p className="font-medium text-sm md:text-base">
+                Call{" "}
+                <a
+                  href="tel:+2349059921680"
+                  className="text-primary hover:underline"
+                >
+                  09059921680
+                </a>{" "}
+                to place your order.
+              </p>
+            </div>
+
+            <div className="mt-4 flex items-center gap-2">
+              <MdOutlineProductionQuantityLimits className="text-xl" />
+              <p className="font-medium text-sm md:text-base">
+                Product Availability: <span>In stock</span>
+              </p>
+            </div>
+
+            <div className="mt-4 flex items-center gap-2">
+              <IoMdInformationCircle className="text-xl" />
+              <p className="font-medium text-sm md:text-base">
+                Delivery Information:{" "}
+                <span>Free delivery within 3-5 business days</span>
+              </p>
+            </div>
+          </div>
+        </>
       ) : (
         <p className="text-lg font-medium">No product found!</p>
       )}
