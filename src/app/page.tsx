@@ -1,6 +1,5 @@
 "use client";
 
-import AboutUS from "@/components/home/About";
 import Hero from "@/components/home/Hero";
 import ProductCard from "@/components/shared/ProductCard";
 import { FaRegFaceSmileWink, FaTruckFast } from "react-icons/fa6";
@@ -108,8 +107,6 @@ export default function Home() {
           </>
         )}
       </div>
-
-      {/* <AboutUS /> */}
 
       <div className="py-10 lg:py-20">
         <h2 className="text-xl sm:text-2xl font-semibold text-center mb-5 sm:mb-8">

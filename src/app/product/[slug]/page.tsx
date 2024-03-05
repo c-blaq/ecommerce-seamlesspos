@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { FaChevronLeft, FaPhone } from "react-icons/fa6";
 import { Product } from "@/types/product";
 import { formatCurrency } from "@/utils/formatCurrency";
