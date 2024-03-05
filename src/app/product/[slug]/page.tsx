@@ -3,6 +3,8 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { FaChevronLeft, FaPhone } from "react-icons/fa6";
+import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
 import { Product } from "@/types/product";
 import { formatCurrency } from "@/utils/formatCurrency";
 import Loader from "@/components/shared/Loader";
@@ -13,7 +15,8 @@ import Modal from "@/components/product/Modal";
 import { useAuth } from "@/context/AuthProvider";
 
 const Product = ({ params }: { params: { slug: string } }) => {
-  const { isLoggedIn, handleLogin } = useAuth();
+  const { isLoggedIn } = useAuth();
+  const router = useRouter();
 
   const [product, setProduct] = useState<Product | undefined>(undefined);
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -26,7 +29,7 @@ const Product = ({ params }: { params: { slug: string } }) => {
         const response = await fetch("/data/mock.json");
 
         if (!response.ok) {
-          throw new Error("Failed to fetch mock data");
+          toast.error("Failed to fetch mock data");
         }
         const data: Product[] = await response.json();
 
@@ -36,7 +39,7 @@ const Product = ({ params }: { params: { slug: string } }) => {
 
         setIsLoading(false);
       } catch (error) {
-        console.error(error);
+        toast.error("Something went wrong! Try again");
       }
     };
 
@@ -56,8 +59,14 @@ const Product = ({ params }: { params: { slug: string } }) => {
   const handleBuyProduct = () => {
     // check if user is not logged
     if (!isLoggedIn) {
-      setOpenModal(true);
+      return setOpenModal(true);
     }
+
+    toast.success("Thank you for your purchase, you will be redirected soon", {
+      autoClose: 3000,
+    });
+
+    setTimeout(() => router.push("/"), 3000);
   };
 
   return (
@@ -159,7 +168,7 @@ const Product = ({ params }: { params: { slug: string } }) => {
       )}
 
       {/* display when user in not logged in */}
-      {!isLoggedIn && <Modal open={openModal} setOpen={setOpenModal} />}
+      <Modal open={openModal} setOpen={setOpenModal} />
     </div>
   );
 };

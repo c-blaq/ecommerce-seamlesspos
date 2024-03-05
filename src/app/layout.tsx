@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
 import Header from "@/components/shared/Header";
 import { twMerge } from "tailwind-merge";
 import Footer from "@/components/shared/Footer";
 import AuthProvider from "@/context/AuthProvider";
+import { ToastContainer } from "react-toastify";
+
+import "./globals.css";
+import "react-toastify/dist/ReactToastify.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,6 +31,7 @@ export default function RootLayout({
             "bg-[#f5f5f5] flex flex-col min-h-screen"
           )}
         >
+          <ToastContainer />
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />

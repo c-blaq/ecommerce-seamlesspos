@@ -32,7 +32,10 @@ const Modal = ({ open, setOpen }: ModalProps) => {
 
           <div className="">
             <button
-              onClick={handleLogin}
+              onClick={() => {
+                handleLogin();
+                setOpen(false);
+              }}
               className="bg-primary text-textGray-100 px-3 py-1 sm:px-5 sm:py-2 rounded hover:bg-primary-dark transition duration-300"
             >
               Login

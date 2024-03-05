@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import Loader from "@/components/shared/Loader";
 import Link from "next/link";
 import Faqs from "@/components/home/Faq";
+import { toast } from "react-toastify";
 
 export default function Home() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -21,13 +22,13 @@ export default function Home() {
         const response = await fetch("/data/mock.json");
 
         if (!response.ok) {
-          throw new Error("Failed to fetch mock data");
+          toast.error("Failed to fetch mock data");
         }
         const data = await response.json();
         setProducts(data);
         setIsLoading(false);
       } catch (error) {
-        console.error(error);
+        toast.error("Something went wrong! Try again");
       }
     };
 
