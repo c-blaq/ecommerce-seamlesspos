@@ -16,8 +16,14 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 
+interface HeroContents {
+  title: string;
+  description: string;
+  imageSrc: string;
+}
+
 const Hero = () => {
-  const CONTENTS = [
+  const CONTENTS: HeroContents[] = [
     {
       title: "Experience Seamless Shopping with SeamlessPOS",
       description:
@@ -38,7 +44,7 @@ const Hero = () => {
     },
   ];
   return (
-    <div className="h-screen relative  bg-gray-100">
+    <div className="h-svh sm:h-screen relative  bg-gray-100">
       <Swiper
         spaceBetween={50}
         slidesPerView={1}

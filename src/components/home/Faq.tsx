@@ -51,11 +51,11 @@ const Faqs = () => {
         <AccordionItem
           key={id}
           value={id.toString()}
-          className="mt-px overflow-hidden text-sm md:text-base px-5 first:mt-0 first:rounded-t last:rounded-b focus-within:relative focus-within:z-10 "
+          className="mt-2 overflow-hidden text-sm md:text-base px-5 first:mt-0 first:rounded-t last:rounded-b focus-within:relative focus-within:z-10 "
         >
-          <AccordionTrigger className="flex justify-between items-center font-semibold w-full shadow-textGray-100 hover:scale-y-90 transition duration-200 group h-[45px] flex-1 leading-none shadow-[0_1px_0] outline-none">
+          <AccordionTrigger className="flex gap-4 !text-left justify-between items-center font-semibold w-full shadow-textGray-100 hover:scale-y-90 transition duration-200 group h-[45px] flex-1 shadow-[0_1px_0] outline-none">
             <span>{question}</span>
-            <IoChevronDownCircleOutline className="ease-[cubic-bezier(0.87,_0,_0.13,_1)] transition-transform duration-200 group-data-[state=open]:rotate-180 text-xl" />
+            <IoChevronDownCircleOutline className="shrink-0 ease-[cubic-bezier(0.87,_0,_0.13,_1)] transition-transform duration-200 group-data-[state=open]:rotate-180 text-xl" />
           </AccordionTrigger>
           <AccordionContent className="mt-1 font-medium data-[state=open]:animate-slideDown data-[state=closed]:animate-slideUp overflow-hidden">
             {answer}

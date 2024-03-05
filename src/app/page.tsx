@@ -96,13 +96,7 @@ export default function Home() {
             </h2>
             <div className="flex gap-5 overflow-x-scroll no-scrollbar">
               {products.map((product: Product) => (
-                <Link
-                  href={`/product/${product.id.toString()}`}
-                  key={product.id}
-                  className="flex-1"
-                >
-                  <ProductCard product={product} />
-                </Link>
+                <ProductCard key={product.id} product={product} />
               ))}
             </div>
           </>
