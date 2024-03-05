@@ -9,6 +9,7 @@ import { Product } from "@/types/product";
 import { useEffect, useState } from "react";
 import Loader from "@/components/shared/Loader";
 import Link from "next/link";
+import Faqs from "@/components/home/Faq";
 
 export default function Home() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -101,7 +102,13 @@ export default function Home() {
           </>
         )}
       </div>
+
       {/* <AboutUS /> */}
+
+      <div className="py-10 lg:py-20">
+        <h2 className="text-2xl font-semibold text-center mb-8">FAQS</h2>
+        <Faqs />
+      </div>
     </>
   );
 }
