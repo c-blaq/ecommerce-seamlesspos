@@ -37,7 +37,7 @@ const Faqs = () => {
       id: 4,
       question: "Do I need to be logged in to make a purchase?",
       answer:
-        "Yes, you need to be logged in to make a purchase.If you're not logged in already, click on the 'Login' button located at the top right corner of the page. This will log you in directly with a pre-set token, and once logged in, you can proceed with your purchase.",
+        "Yes, you need to be logged in to make a purchase.If you're not logged in already, click on the 'Login' button located at the top right corner of the page. This will log you in directly, and once logged in, you can proceed with your purchase.",
     },
   ];
 

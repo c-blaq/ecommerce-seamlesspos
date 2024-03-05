@@ -15,7 +15,7 @@ import Modal from "@/components/product/Modal";
 import { useAuth } from "@/context/AuthProvider";
 
 const Product = ({ params }: { params: { slug: string } }) => {
-  const { isLoggedIn } = useAuth();
+  const { isLoggedIn, handleAddToCart } = useAuth();
   const router = useRouter();
 
   const [product, setProduct] = useState<Product | undefined>(undefined);
@@ -127,7 +127,10 @@ const Product = ({ params }: { params: { slug: string } }) => {
                 >
                   Buy Now
                 </button>
-                <button className=" h-10 text-sm  bg-textBlack hover:bg-textBlack/80 text-white flex-1 rounded transition duration-300">
+                <button
+                  onClick={handleAddToCart}
+                  className=" h-10 text-sm  bg-textBlack hover:bg-textBlack/80 text-white flex-1 rounded transition duration-300"
+                >
                   Add to cart
                 </button>
               </div>

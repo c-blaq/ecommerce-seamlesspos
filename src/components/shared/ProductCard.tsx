@@ -1,3 +1,4 @@
+import { useAuth } from "@/context/AuthProvider";
 import { Product } from "@/types/product";
 import { formatCurrency } from "@/utils/formatCurrency";
 import Image from "next/image";
@@ -9,6 +10,8 @@ interface IProduct {
 }
 
 const ProductCard = ({ product }: IProduct) => {
+  const { handleAddToCart } = useAuth();
+
   return (
     <div className="max-w-md min-w-[220px] rounded overflow-hidden shadow-lg flex-1 shrink-0">
       <Link
@@ -36,7 +39,10 @@ const ProductCard = ({ product }: IProduct) => {
         </div>
       </Link>
 
-      <button className="block w-fit mx-5 ml-auto bg-textBlack hover:bg-textBlack/[0.06] hover:text-textBlack text-white text-sm p-2 sm:py-2 sm:px-4 rounded">
+      <button
+        onClick={handleAddToCart}
+        className="block w-fit mx-5 ml-auto bg-textBlack hover:bg-textBlack/[0.06] hover:text-textBlack text-white text-sm p-2 sm:py-2 sm:px-4 rounded"
+      >
         Add to Cart
       </button>
     </div>

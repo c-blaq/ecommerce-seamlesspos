@@ -7,7 +7,7 @@ import { IoBagOutline } from "react-icons/io5";
 import { useAuth } from "@/context/AuthProvider";
 
 const Header: React.FC = () => {
-  const { isLoggedIn, handleLogin, handleLogout } = useAuth();
+  const { isLoggedIn, handleLogin, handleLogout, cartItemsCount } = useAuth();
 
   return (
     <header className="bg-transparent fixed z-10 left-0 right-0 md:top-5 items-center h-16 px-5">
@@ -27,14 +27,19 @@ const Header: React.FC = () => {
         </h1>
 
         <div className="flex items-center gap-4">
-          <button className="hover:text-gray-500 text-primary-dark transition duration-300">
+          <button className="hover:text-gray-500 relative text-primary-dark transition duration-300">
             <IoBagOutline className="text-xl sm:text-2xl" />
+            {cartItemsCount > 0 && (
+              <span className="absolute -top-2 -right-2 bg-red-200 text-textBlack text-xs w-5 h-5 rounded-full flex items-center justify-center">
+                {cartItemsCount}
+              </span>
+            )}
           </button>
 
           {!isLoggedIn ? (
             <button
               onClick={handleLogin}
-              className="bg-primary text-textGray-100 px-3 py-1 sm:px-5 sm:py-2 rounded hover:bg-primary-dark transition duration-300"
+              className="bg-primary text-xs text-textGray-100 px-3 py-1 sm:px-5 sm:py-2 rounded hover:bg-primary-dark transition duration-300"
             >
               Login
             </button>
