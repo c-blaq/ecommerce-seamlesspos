@@ -1,15 +1,14 @@
 "use client";
 
-import Hero from "@/components/home/Hero";
-import ProductCard from "@/components/shared/ProductCard";
+import { useEffect, useState } from "react";
 import { FaRegFaceSmileWink, FaTruckFast } from "react-icons/fa6";
 import { RiSecurePaymentFill } from "react-icons/ri";
-import { Product } from "@/types/product";
-import { useEffect, useState } from "react";
-import Loader from "@/components/shared/Loader";
-import Link from "next/link";
-import Faqs from "@/components/home/Faq";
 import { toast } from "react-toastify";
+import Hero from "@/components/home/Hero";
+import ProductCard from "@/components/shared/ProductCard";
+import { Product } from "@/types/product";
+import Loader from "@/components/shared/Loader";
+import Faqs from "@/components/home/Faq";
 
 export default function Home() {
   const [products, setProducts] = useState<Product[]>([]);

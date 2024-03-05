@@ -83,7 +83,10 @@ const Product = ({ params }: { params: { slug: string } }) => {
         <>
           <div className="flex -mx-5 lg:mx-0 h-full flex-col lg:flex-row justify-between gap-5 items-center">
             <div className="h-full w-full lg:w-1/2 ">
-              <ImageSlide images={product.image} altText={product.name} />
+              <ImageSlide
+                images={product.additionalDetails?.images}
+                altText={product.name}
+              />
             </div>
 
             <div className="flex-1 mt-5 lg:mt-0 px-5 lg:px-0">

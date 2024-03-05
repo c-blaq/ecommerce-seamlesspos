@@ -4,20 +4,21 @@
     "name": "Iphone 12",
     "description": "The latest flagship smartphone from Apple. Experience blazing fast performance, stunning photography, and all-day battery life with this sleek and powerful device.",
     "price": 359999.99,
-    "image": [
-      "/images/iphone12Front.webp",
-      "/images/iphone12Back.jpeg",
-      "/images/iphone12Top.jpg"
-    ],
+    "image": "/images/iphone12Front.webp",
     "additionalDetails": {
-      "brand": "Apple",
-      "color": "Black",
-      "screenSize": "6.7 inches",
-      "resolution": "1440 x 3200 pixels",
-      "camera": "Quad-camera setup with 108 MP main sensor",
-      "processor": "Snapdragon 888",
+      "Brand": "Apple",
+      "Color": "Black",
+      "ScreenSize": "6.7 inches",
+      "Resolution": "1440 x 3200 pixels",
+      "Camera": "Quad-camera setup with 108 MP main sensor",
+      "Processor": "Snapdragon 888",
       "RAM": "12 GB",
-      "storage": "256 GB"
+      "Storage": "256 GB",
+      "images": [
+        "/images/iphone12Front.webp",
+        "/images/iphone12Back.jpeg",
+        "/images/iphone12Top.jpg"
+      ]
     }
   },
   {
@@ -25,18 +26,19 @@
     "name": "HP Omen",
     "description": "Power through your workday with the ultra-portable and high-performance laptop from HP. Featuring a stunning display, lightning-fast SSD storage, and all-day battery life, this laptop is perfect for professionals on the go.",
     "price": 499999.99,
-    "image": [
-      "/images/hpOmenFront.jpg",
-      "/images/hpOmenBack.jpg",
-      "/images/hpOmenMultiple.jpg"
-    ],
+    "image": "/images/hpOmenFront.jpg",
     "additionalDetails": {
-      "brand": "HP",
+      "Brand": "HP",
       "processor": "Intel Core i7-1165G7",
       "RAM": "16 GB DDR4",
-      "storage": "512 GB NVMe SSD",
-      "graphics": "NVIDIA GeForce GTX 1650",
-      "display": "15.6-inch Full HD IPS display"
+      "Storage": "512 GB NVMe SSD",
+      "Graphics": "NVIDIA GeForce GTX 1650",
+      "Display": "15.6-inch Full HD IPS display",
+      "images": [
+        "/images/hpOmenFront.jpg",
+        "/images/hpOmenBack.jpg",
+        "/images/hpOmenMultiple.jpg"
+      ]
     }
   },
   {
@@ -44,20 +46,21 @@
     "name": "Wireless Headphone",
     "description": "Immerse yourself in your favorite music with these premium wireless earbuds from Oraimo. With active noise cancellation, sweat and water resistance, and a comfortable ergonomic design, these earbuds are perfect for workouts, commutes, and everyday use.",
     "price": 19999.99,
-    "image": [
-      "/images/oHeadphoneFront.webp",
-      "/images/oHeadphoneLeft.webp",
-      "/images/oHeadphoneMultiple.jpg"
-    ],
+    "image": "/images/oHeadphoneFront.webp",
     "additionalDetails": {
-      "brand": "Oraimo",
-      "type": "Headset",
-      "wireless": true,
-      "color": "Black",
-      "batteryLife": "Up to 8 hours on a single charge",
-      "chargingCase": "Provides an additional 24 hours of battery life",
-      "noiseCancellation": true,
-      "waterResistance": "IPX4-rated"
+      "Brand": "Oraimo",
+      "Type": "Headset",
+      "Wireless": true,
+      "Color": "Black",
+      "BatteryLife": "Up to 8 hours on a single charge",
+      "Charging Case": "Provides an additional 24 hours of battery life",
+      "Noise Cancellation": true,
+      "Water Resistance": "IPX4-rated",
+      "images": [
+        "/images/oHeadphoneFront.webp",
+        "/images/oHeadphoneLeft.webp",
+        "/images/oHeadphoneMultiple.jpg"
+      ]
     }
   },
   {
@@ -65,14 +68,15 @@
     "name": "IWatch 3",
     "description": "Stay connected and track your fitness goals with the latest smartwatch from Apple. With advanced health monitoring features, built-in GPS, and a sleek design, this smartwatch is your perfect companion for an active lifestyle.",
     "price": 299999.99,
-    "image": ["/images/iWatchSide.jpeg", "/images/iWatchFront.jpeg"],
+    "image": "/images/iWatchSide.jpeg",
     "additionalDetails": {
-      "brand": "Apple",
-      "display": "1.4-inch AMOLED touchscreen",
-      "sensors": "Heart rate monitor, SpO2 sensor, Accelerometer, Gyroscope",
-      "connectivity": "Bluetooth 5.0, Wi-Fi, GPS",
-      "waterResistance": "Up to 50 meters (5 ATM)",
-      "batteryLife": "Up to 7 days on a single charge"
+      "Brand": "Apple",
+      "Display": "1.4-inch AMOLED touchscreen",
+      "Sensors": "Heart rate monitor, SpO2 sensor, Accelerometer, Gyroscope",
+      "Connectivity": "Bluetooth 5.0, Wi-Fi, GPS",
+      "Water Resistance": "Up to 50 meters (5 ATM)",
+      "Battery Life": "Up to 7 days on a single charge",
+      "images": ["/images/iWatchSide.jpeg", "/images/iWatchFront.jpeg"]
     }
   }
 ]

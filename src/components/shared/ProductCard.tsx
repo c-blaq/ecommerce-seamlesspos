@@ -18,7 +18,7 @@ const ProductCard = ({ product }: IProduct) => {
       >
         <div className="bg-gray-400 h-72 hover:scale-105 transition duration-300 overflow-clip">
           <Image
-            src={product.image[0]}
+            src={product.image}
             alt={product.name}
             width={500}
             height={500}
