@@ -5,9 +5,9 @@ import { IoBagOutline } from "react-icons/io5";
 
 const Header: React.FC = () => {
   return (
-    <header className="bg-transparent fixed z-10 left-0 right-0 top-5 items-center h-16 px-5">
-      <div className="flex justify-between items-center gap-5 h-full w-full max-w-screen-2xl mx-auto sm:rounded-full backdrop-blur-md sm:px-5 py-4">
-        <h1 className="text-lg sm:text-xl font-semibold transition duration-300">
+    <header className="bg-transparent fixed z-10 left-0 right-0 md:top-5 items-center h-16 px-5">
+      <div className="flex justify-between items-center gap-5 h-full w-full max-w-screen-2xl mx-auto md:rounded-full backdrop-blur-md sm:px-5 py-4">
+        <h1 className="w-36 sm:w-auto">
           <Link href="/">
             <Image
               src="/images/logo.png"

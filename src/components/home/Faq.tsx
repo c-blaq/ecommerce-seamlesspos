@@ -43,7 +43,7 @@ const Faqs = () => {
 
   return (
     <Root
-      className="rounded-md shadow-[0_2px_10px] shadow-black/5 bg-primary-dark text-textGray-100 max-w-2xl mx-auto py-8"
+      className="md:rounded-md shadow-[0_2px_10px] shadow-black/5 bg-primary-dark text-textGray-100 max-w-2xl mx-auto py-8"
       type="single"
       collapsible
     >
