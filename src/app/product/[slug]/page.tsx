@@ -9,10 +9,13 @@ import Loader from "@/components/shared/Loader";
 import ImageSlide from "@/components/product/ImageSlide";
 import { IoMdInformationCircle } from "react-icons/io";
 import { MdOutlineProductionQuantityLimits } from "react-icons/md";
+import Modal from "@/components/product/Modal";
 
 const Product = ({ params }: { params: { slug: string } }) => {
   const [product, setProduct] = useState<Product | undefined>(undefined);
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [openModal, setOpenModal] = useState<boolean>(false);
+  const isLoggedIn = true;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -47,6 +50,13 @@ const Product = ({ params }: { params: { slug: string } }) => {
       </div>
     );
   }
+
+  const handleBuyProduct = () => {
+    // check if user is not logged
+    if (true) {
+      setOpenModal(true);
+    }
+  };
 
   return (
     <div className="py-24 px-5 lg:min-h-screen  max-w-screen-2xl  mx-auto">
@@ -97,7 +107,10 @@ const Product = ({ params }: { params: { slug: string } }) => {
               )}
 
               <div className="flex gap-4 mt-8 md:mt-10">
-                <button className="text-sm h-10 bg-primary hover:bg-primary-dark text-white flex-1 rounded transition duration-300">
+                <button
+                  onClick={handleBuyProduct}
+                  className="text-sm h-10 bg-primary hover:bg-primary-dark text-white flex-1 rounded transition duration-300"
+                >
                   Buy Now
                 </button>
                 <button className=" h-10 text-sm  bg-textBlack hover:bg-textBlack/80 text-white flex-1 rounded transition duration-300">
@@ -142,6 +155,9 @@ const Product = ({ params }: { params: { slug: string } }) => {
       ) : (
         <p className="text-lg font-medium">No product found!</p>
       )}
+
+      {/* display when user in not logged in */}
+      <Modal open={openModal} setOpen={setOpenModal} />
     </div>
   );
 };
