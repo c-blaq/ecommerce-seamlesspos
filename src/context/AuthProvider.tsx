@@ -14,12 +14,9 @@ export const AuthContext = createContext<AuthContextType>(
 );
 
 const AuthProvider = ({ children }: { children: ReactNode }) => {
-  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(
-    () => localStorage.getItem("__token") !== null
-  );
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 
   const handleLogin = () => {
-    localStorage.setItem("__token", "test.evyiwjXHNwwnndndd.dgyuuwuwdndid");
     setIsLoggedIn(true);
     toast.success("Login successful!", {
       autoClose: 1000,
