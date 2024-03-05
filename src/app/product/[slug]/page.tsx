@@ -10,12 +10,14 @@ import ImageSlide from "@/components/product/ImageSlide";
 import { IoMdInformationCircle } from "react-icons/io";
 import { MdOutlineProductionQuantityLimits } from "react-icons/md";
 import Modal from "@/components/product/Modal";
+import { useAuth } from "@/context/AuthProvider";
 
 const Product = ({ params }: { params: { slug: string } }) => {
+  const { isLoggedIn, handleLogin } = useAuth();
+
   const [product, setProduct] = useState<Product | undefined>(undefined);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [openModal, setOpenModal] = useState<boolean>(false);
-  const isLoggedIn = true;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -53,7 +55,7 @@ const Product = ({ params }: { params: { slug: string } }) => {
 
   const handleBuyProduct = () => {
     // check if user is not logged
-    if (true) {
+    if (!isLoggedIn) {
       setOpenModal(true);
     }
   };
@@ -157,7 +159,7 @@ const Product = ({ params }: { params: { slug: string } }) => {
       )}
 
       {/* display when user in not logged in */}
-      <Modal open={openModal} setOpen={setOpenModal} />
+      {!isLoggedIn && <Modal open={openModal} setOpen={setOpenModal} />}
     </div>
   );
 };

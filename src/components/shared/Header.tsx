@@ -1,9 +1,14 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { IoBagOutline } from "react-icons/io5";
+import { useAuth } from "@/context/AuthProvider";
 
 const Header: React.FC = () => {
+  const { isLoggedIn, handleLogin, handleLogout } = useAuth();
+
   return (
     <header className="bg-transparent fixed z-10 left-0 right-0 md:top-5 items-center h-16 px-5">
       <div className="flex justify-between items-center gap-5 h-full w-full max-w-screen-2xl mx-auto md:rounded-full backdrop-blur-md sm:px-5 py-4">
@@ -25,12 +30,22 @@ const Header: React.FC = () => {
           <button className="hover:text-gray-500 text-primary-dark transition duration-300">
             <IoBagOutline className="text-xl sm:text-2xl" />
           </button>
-          <Link
-            href="/"
-            className="bg-primary text-textGray-100 px-3 py-1 sm:px-5 sm:py-2 rounded hover:bg-primary-dark transition duration-300"
-          >
-            Login
-          </Link>
+
+          {!isLoggedIn ? (
+            <button
+              onClick={handleLogin}
+              className="bg-primary text-textGray-100 px-3 py-1 sm:px-5 sm:py-2 rounded hover:bg-primary-dark transition duration-300"
+            >
+              Login
+            </button>
+          ) : (
+            <button
+              onClick={handleLogout}
+              className="bg-red-500 text-textGray-100 px-3 py-1 sm:px-5 sm:py-2 rounded hover:bg-red-400 transition duration-300"
+            >
+              Logout
+            </button>
+          )}
         </div>
       </div>
     </header>

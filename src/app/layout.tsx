@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/shared/Header";
 import { twMerge } from "tailwind-merge";
 import Footer from "@/components/shared/Footer";
+import AuthProvider from "@/context/AuthProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,17 +20,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body
-        className={twMerge(
-          inter.className,
-          "bg-[#f5f5f5] flex flex-col min-h-screen"
-        )}
-      >
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
-      </body>
-    </html>
+    <AuthProvider>
+      <html lang="en" className="scroll-smooth">
+        <body
+          className={twMerge(
+            inter.className,
+            "bg-[#f5f5f5] flex flex-col min-h-screen"
+          )}
+        >
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </body>
+      </html>
+    </AuthProvider>
   );
 }
