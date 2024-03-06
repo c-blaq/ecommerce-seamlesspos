@@ -10,7 +10,7 @@ const Header: React.FC = () => {
   const { isLoggedIn, handleLogin, handleLogout, cartItemsCount } = useAuth();
 
   return (
-    <header className="bg-transparent fixed z-10 left-0 right-0 md:top-5 items-center h-16 px-5">
+    <header className="bg-transparent fixed z-10 left-0 right-0 top-0 items-center h-16 px-5">
       <div className="flex justify-between items-center gap-5 h-full w-full max-w-screen-2xl mx-auto md:rounded-full backdrop-blur-md sm:px-5 py-4">
         <h1 className="w-36 sm:w-auto">
           <Link href="/">

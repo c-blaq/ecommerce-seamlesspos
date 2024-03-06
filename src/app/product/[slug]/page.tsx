@@ -89,7 +89,7 @@ const Product = ({ params }: { params: { slug: string } }) => {
               />
             </div>
 
-            <div className="flex-1 mt-5 lg:mt-0 px-5 lg:px-0">
+            <div className="w-full lg:w-1/2 mt-5 lg:mt-0 px-5 lg:px-0">
               <div className="flex justify-between items-center">
                 <h2 className="text-xl font-semibold">{product?.name}</h2>
                 <span className="text-textBlack text-lg">
@@ -107,14 +107,15 @@ const Product = ({ params }: { params: { slug: string } }) => {
                   </h3>
                   <ul className="mt-2 grid sm:grid-cols-2 gap-3">
                     {Object.entries(product?.additionalDetails).map(
-                      ([key, value]) => (
-                        <li key={key}>
-                          <span className="font-semibold text-sm lg:text-base">
-                            {key}:
-                          </span>{" "}
-                          {value}
-                        </li>
-                      )
+                      ([key, value]) =>
+                        key !== "images" && (
+                          <li key={key}>
+                            <span className="font-semibold text-sm lg:text-base">
+                              {key}:
+                            </span>{" "}
+                            {value}
+                          </li>
+                        )
                     )}
                   </ul>
                 </div>
