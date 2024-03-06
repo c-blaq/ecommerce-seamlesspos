@@ -28,19 +28,19 @@ const Hero = () => {
       title: "Experience Seamless Shopping with SeamlessPOS",
       description:
         "Discover a world of electronic wonders with SeamlessPOS. From smartphones to laptops, wireless earbuds to smartwatches, find the perfect tech companion to elevate your lifestyle. ",
-      imageSrc: "/images/ecommerce.webp",
+      imageSrc: "/images/mainbanner.png",
     },
     {
       title: "Enjoy True Wireless Freedom with Wireless Headphones",
       description:
         "Immerse yourself in your favorite music with wireless headphones, offering superior sound quality, comfort, and convenience.",
-      imageSrc: "/images/headphone.avif",
+      imageSrc: "/images/headphone.jpg",
     },
     {
       title: "Discover the Latest Smartwatches",
       description:
         "Explore a wide range of Smartwatches from top brands, featuring stunning displays,and innovative features.",
-      imageSrc: "/images/smartwatch.avif",
+      imageSrc: "/images/smartwatch.jpg",
     },
   ];
   return (
@@ -58,7 +58,7 @@ const Hero = () => {
         {CONTENTS.map((item, index) => (
           <SwiperSlide
             key={index}
-            className="relative flex items-center justify-center"
+            className="relative h-full flex items-center justify-center"
           >
             <Image
               src={item.imageSrc}
@@ -67,7 +67,7 @@ const Hero = () => {
               height={1400}
               priority
               fetchPriority="high"
-              className="object-cover origin-center  w-full h-full"
+              className="object-cover aspect-square  w-full h-full"
             />
             <div className="absolute max-w-3xl z-[2] left-5 2xl:left-[20%] top-[45%] text-textGray-100">
               <h1 className="text-2xl sm:text-3xl mb-4 md:mb-5 font-semibold">
