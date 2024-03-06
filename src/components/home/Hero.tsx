@@ -44,7 +44,7 @@ const Hero = () => {
     },
   ];
   return (
-    <div className="h-dvh max-h-[700px] relative  bg-gray-100">
+    <div className="h-[80vh] relative  bg-gray-100">
       <Swiper
         spaceBetween={50}
         slidesPerView={1}
